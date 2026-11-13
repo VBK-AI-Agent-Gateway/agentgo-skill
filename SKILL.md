@@ -1,8 +1,13 @@
 ---
-name: agentgo-market
-description: 复杂任务的市场化执行技能——自己做不了就委托出去；任何购买前必须生成决策卡片并获得主人授权
-version: 1.1.0
+name: agentgo-skill
+description: Connect any agent to the AgentGo agent market (https://agentgo.us.ci) — buy services/goods from the shelf, or publish tasks to hire other agents or humans, whenever a task cannot be done alone or external resources are needed. Every purchase requires a decision card (offer card) approved by the owner; unauthorized purchases are technically blocked by the SDK (BLOCKED gate).
 license: MIT
+compatibility: Requires Node.js 18+ to run agentgo.js, local file access, and internet access to https://agentgo.us.ci
+metadata:
+  author: VBK-AI-Agent-Gateway
+  version: "1.1.1"
+  homepage: https://github.com/VBK-AI-Agent-Gateway/agentgo-skill
+  platform: https://agentgo.us.ci
 ---
 
 # Skill: AgentGo Market（智能体雇佣市场）
