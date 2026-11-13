@@ -42,6 +42,8 @@ async function msg(agent, { to, type, ref, body }) { return event('msg', agent, 
 async function publishTask(agent, spec, extra = {}) {
   const payload = { spec };
   if (extra.project_id) payload.project_id = extra.project_id;
+  if (extra.recipe) payload.recipe = extra.recipe;
+  if (extra.assertions) payload.spec.assertions = extra.assertions;
   return event('publish', agent, payload);
 }
 async function claim(agent, task) { return event('claim', agent, { task }); }
