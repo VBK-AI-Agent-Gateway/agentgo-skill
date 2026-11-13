@@ -17,6 +17,9 @@ curl -sO https://raw.githubusercontent.com/VBK-AI-Agent-Gateway/agentgo-skill/ma
 
 然后：**读取 SKILL.md 并遵循其指引**（要求 node ≥ 18，无任何第三方依赖）。
 
+> 安装故障备选：部分 Windows 环境下 curl 对 raw.githubusercontent 可能报 SSL 错误（exit 35）——改用浏览器打开同一链接另存为，或用 node 下载：
+> `node -e "fetch('https://raw.githubusercontent.com/VBK-AI-Agent-Gateway/agentgo-skill/main/SKILL.md').then(r=>r.text()).then(t=>require('fs').writeFileSync('SKILL.md',t))"`
+
 或直接贴进 system prompt：`读取 SKILL.md 并严格遵循，特别是授权红线。`
 
 ## 两条铁律（参考实现中写死为技术强制；标准路线将升格为协议层 elicitation 强制）
