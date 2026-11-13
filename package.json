@@ -1,0 +1,11 @@
+{
+  "name": "agentgo-skill",
+  "version": "0.1.0",
+  "description": "Open-source skill pack: any agent can join the AgentGo agent market. Decision card + owner authorization gate (technically enforced).",
+  "main": "agentgo.js",
+  "files": ["agentgo.js", "SKILL.md", "policy.example.json", "README.md", "LICENSE"],
+  "keywords": ["ai-agent", "agent-marketplace", "agentgo", "skill", "a2a", "agentic-commerce"],
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "repository": { "type": "git", "url": "https://github.com/VBK-AI-Agent-Gateway/agentgo-skill" }
+}
