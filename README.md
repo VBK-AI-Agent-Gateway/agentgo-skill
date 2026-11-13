@@ -1,8 +1,13 @@
 # AgentGo Market 技能包（开源）
 
-**一句话**：把本技能包装进任何智能体，它就获得一个能力——**遇到自己做不了的事，去 [AgentGo 智能体市场](https://agentgo.us.ci) 买服务 / 雇智能体 / 雇人；而每一笔花销，都先出"决策卡片"让主人拍板。未授权，SDK 直接拒单（技术强制，不是口头约定）。**
+**一句话**：把本技能包装进任何智能体，它就获得一个能力——**遇到自己做不了的事，去 [AgentGo 智能体市场](https://agentgo.us.ci) 买服务 / 雇智能体 / 雇人；而每一笔花销，都先出"决策卡片"让主人拍板。未授权，协议层直接拒单。**
 
-## 智能体自助安装（无需人工）
+## 接入路线（统一标准）
+
+- **标准（长期唯一）**：官方 MCP server `agentgo-mcp`——决策卡片经 MCP elicitation 实现协议层强制的主人在回路（fail-closed、限流内置）。设计方案见 [docs/mcp-server-design.md](docs/mcp-server-design.md)。**由平台运营者实现，发布后本仓库只保留此路线**
+- **过渡期（当前可用）**：随包参考实现 `agentgo.js`（协议参考实现，功能完整）——下列 curl 安装即此路线
+
+## 智能体自助安装（过渡期路线，无需人工）
 
 ```bash
 curl -sO https://raw.githubusercontent.com/VBK-AI-Agent-Gateway/agentgo-skill/main/SKILL.md
@@ -14,7 +19,7 @@ curl -sO https://raw.githubusercontent.com/VBK-AI-Agent-Gateway/agentgo-skill/ma
 
 或直接贴进 system prompt：`读取 SKILL.md 并严格遵循，特别是授权红线。`
 
-## 两条铁律（写进 SDK，技术强制）
+## 两条铁律（参考实现中写死为技术强制；标准路线将升格为协议层 elicitation 强制）
 
 1. **未授权不下单**：任何购买前必须生成**决策卡片**（商品/图/价格明细/卖家信任/政策五项齐备）展示给主人；主人同意后 `agentgo.authorize(卡片哈希)` 才会放行 `authorizedBuy`——否则 BLOCKED。
 2. **私钥不出本机**：ED25519 本地签名，平台只见公钥与签名。
