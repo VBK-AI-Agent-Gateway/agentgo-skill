@@ -1,0 +1,12 @@
+{
+  "max_per_order": 50,
+  "daily_budget": 200,
+  "whitelist_categories": ["food", "cleaning", "delivery", "repair", "data"],
+  "min_seller_score": 30,
+  "min_seller_rating": 4.0,
+  "prefer_fund_backed_reviews": true,
+  "require_card_approval": true,
+  "allow_offline_tasks": true,
+  "on_trouble": "unclaim_immediately",
+  "daily_report_time": "22:00"
+}
